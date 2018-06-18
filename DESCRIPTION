@@ -1,0 +1,12 @@
+Package: rostools
+Version: 0.0.0.9000
+Title: Reproducible and Open Science Toolkit
+Description: A toolkit that helps automate and simplify a reproducible and open
+    scientific research project. Currently, this is only aimed for research
+    projects that use R as the base statistical language.
+Authors@R: Luke Johnston <lwjohnst@gmail.com> [aut, cre]
+License: MIT + LICENSE
+Encoding: UTF-8
+LazyData: true
+ByteCompile: true
+Roxygen: list(markdown = TRUE)

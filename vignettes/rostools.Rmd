@@ -1,0 +1,40 @@
+---
+title: "Vignette Title"
+author: "Vignette Author"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+
+In addition to the main functions, there are several `include_*()`
+style functions available to add other, maybe less common, files. So far
+there are:
+
+- `include_rfigshare_script()` to send portions (or all) of your code to
+[figshare](https://figshare.com/) for others to confirm or use your code and
+analysis workflow.
+- `include_mit_license()` to add a MIT license to your code, so that you
+explicitly allow others to re-use your code without legal issues coming up.
+Works well in conjunction with the above function.
+- `include_strobe()` to add a STROBE checklist. This is very specific to
+epidemiological research (which I do), so not all users will need this.
+
+You can use them by opening up the new project `.Rproj` (RStudio) file and run
+them in the console as:
+
+```{r, eval=FALSE}
+prodigenr::include_rfigshare_script()
+prodigenr::include_mit_license()
+prodigenr::include_strobe()
+```
