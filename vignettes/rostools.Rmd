@@ -1,10 +1,11 @@
 ---
-title: "Vignette Title"
-author: "Vignette Author"
+title: "Reproducible and open scientific workflow toolkit"
+subtitle: "An introduction to rostools"
+author: "Luke W. Johnston"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteIndexEntry{Reproducible and open scientific workflow toolkit}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
