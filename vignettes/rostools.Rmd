@@ -39,3 +39,18 @@ prodigenr::include_rfigshare_script()
 prodigenr::include_mit_license()
 prodigenr::include_strobe()
 ```
+
+
+
+```{r}
+devtools::load_all()
+library(desc)
+library(prodigenr)
+path <- tempdir()
+setup_project("newproject", path = path)
+list.files(path = path)
+x <- desc::description$new(file = file.path(path, "newproject", "DESCRIPTION"))
+x$get("Authors")
+x$set_authors()
+```
+
