@@ -12,5 +12,5 @@ ByteCompile: true
 Roxygen: list(markdown = TRUE)
 Suggests: 
     covr
-RoxygenNote: 6.0.1
+RoxygenNote: 7.0.2
 Imports: 
