@@ -83,3 +83,33 @@ check_orcid <- function(orcid) {
     }
     orcid
 }
+
+add_author_to_desc_from_orcid <- function() {
+
+names_from_orcid <- orcid_person(orcid_numbers) %>%
+    map("name")
+
+employment <- orcid_employments(orcid_numbers) %>%
+    map("affiliation-group") %>%
+    map("summaries")
+
+list(
+    given = names_from_orcid %>%
+        map_chr(list("given-names", "value")),
+    family = names_from_orcid %>%
+        map_chr(list("family-name", "value")),
+    ORCID = orcid_numbers,
+    affiliation = employment %>%
+        map_chr(list(1, "employment-summary.organization.name"))
+) %>%
+    pmap(function(given, family, ORCID, affiliation) {
+        desc::desc_add_author(
+            given = given,
+            family = family,
+            role = "aut",
+            comment = "c(ORCID = '{ORCID}', affiliation = '{affiliation}')" %>%
+                glue::glue() %>%
+                as.character()
+        )
+    })
+}
